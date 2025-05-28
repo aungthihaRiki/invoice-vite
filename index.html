@@ -73,7 +73,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="bg-white border-b border-gray-200 ">
+                <tr class="bg-white border-b border-gray-200">
                   <th
                     scope="row"
                     colspan="5"
@@ -81,7 +81,6 @@
                   >
                     There is no item.
                   </th>
-              
                 </tr>
                 <tr class="bg-white border-b border-gray-200">
                   <th
@@ -169,13 +168,33 @@
         </div>
       </section>
       <section
-      id="inventorySlide"
-        class="fixed right-0 bg-white w-[400px] h-screen p-4 translate-x-full duration-200"
+        id="inventorySlide"
+        class="fixed right-0 bg-white w-[400px] h-screen p-4 translate-x-full z-100"
       >
-        <div class="mb-2">
-          <h1 class="font-san font-bold text-3xl">Victus</h1>
-          <p class="text-blue-300">Inventory Manage</p>
+        <div class="flex justify-between items-center">
+          <div class="mb-2">
+            <h1 class="font-san font-bold text-3xl">Victus</h1>
+            <p class="text-blue-300">Inventory Manage</p>
+          </div>
+
+          <button class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500" id="closeSlideBtn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 pointer-events-none"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </div>
+
         <div class="manage-form mb-2">
           <form>
             <div class="grid grid-cols-4 grid-rows-2 gap-2">
