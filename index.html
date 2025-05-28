@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice App</title>
+  </head>
+  <body>
+    <main class="flex flex-col h-screen">
+      <header class="container py-2 mb-3">
+        <div>
+          <h1 class="font-san font-bold text-3xl">Victus</h1>
+          <p class="text-blue-300">Invoice App</p>
+        </div>
+      </header>
+      <section class="container">
+        <div class="form-input mb-2">
+          <div class="bg-sky-100 py-2 px-4 rounded-lg">
+            <form>
+              <div class="grid grid-cols-4 gap-2">
+                <div class="col-span-2">
+                  <label
+                    for="countries"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Select a Item</label
+                  >
+                  <select
+                    id="countries"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  >
+                    <option selected>Choose an item</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="FR">France</option>
+                    <option value="DE">Germany</option>
+                  </select>
+                </div>
+                <div class="col-span-1">
+                  <label
+                    for="quantity"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Quantity</label
+                  >
+                  <input
+                    type="number"
+                    id="quantity"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <div class="col-span-1">
+                  <button
+                    type="button"
+                    class="w-full h-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+                  >
+                    Add Record
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="table w-full">
+          <div class="relative overflow-x-auto">
+            <table class="w-full text-sm text-left rtl:text-right">
+              <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                <tr>
+                  <th scope="col" class="px-6 py-3">Product name</th>
+                  <th scope="col" class="px-6 py-3">Price</th>
+                  <th scope="col" class="px-6 py-3">Quantity</th>
+                  <th scope="col" class="px-6 py-3">Cost</th>
+                  <th scope="col" class="px-6 py-3">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white border-b border-gray-200 ">
+                  <th
+                    scope="row"
+                    colspan="5"
+                    class="text-center px-6 py-4 font-medium text-gray-600 text-2xl whitespace-nowrap dark:text-white"
+                  >
+                    There is no item.
+                  </th>
+              
+                </tr>
+                <tr class="bg-white border-b border-gray-200">
+                  <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  >
+                    Apple MacBook Pro 17"
+                  </th>
+                  <td class="px-6 py-4 text-end">Silver</td>
+                  <td class="px-6 py-4 text-end">1</td>
+                  <td class="px-6 py-4 text-end">$2999</td>
+                  <td class="px-6 py-4 text-end">
+                    <button
+                      type="button"
+                      class="px-3 py-2 text-sm text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg me-2 mb-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="bg-white border-b border-gray-200">
+                  <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  >
+                    Microsoft Surface Pro
+                  </th>
+                  <td class="px-6 py-4 text-end">White</td>
+                  <td class="px-6 py-4 text-end">4</td>
+                  <td class="px-6 py-4 text-end">$1999</td>
+                  <td class="px-6 py-4 text-end">
+                    <button
+                      type="button"
+                      class="px-3 py-2 text-sm text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg me-2 mb-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="bg-white border-b border-gray-200">
+                  <td class="px-6 py-4 text-end font-bold" colspan="3">
+                    Total
+                  </td>
+                  <td class="px-6 py-4 text-end font-bold" colspan="1">4000</td>
+                </tr>
+                <tr class="bg-white border-b border-gray-200">
+                  <td class="px-6 py-4 text-end font-bold" colspan="3">Tax</td>
+                  <td class="px-6 py-4 text-end font-bold" colspan="1">500</td>
+                </tr>
+                <tr class="bg-white border-b border-gray-200">
+                  <td class="px-6 py-4 text-end font-bold" colspan="3">
+                    Net Total
+                  </td>
+                  <td class="px-6 py-4 text-end font-bold" colspan="1">4500</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section
+      id="inventorySlide"
+        class="fixed right-0 bg-white w-[400px] h-screen p-4 translate-x-full duration-200"
+      >
+        <div class="mb-2">
+          <h1 class="font-san font-bold text-3xl">Victus</h1>
+          <p class="text-blue-300">Inventory Manage</p>
+        </div>
+        <div class="manage-form mb-2">
+          <form>
+            <div class="grid grid-cols-4 grid-rows-2 gap-2">
+              <div class="col-span-4">
+                <label
+                  for="productName"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Product name</label
+                >
+                <input
+                  type="text"
+                  id="productName"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Apple"
+                  required
+                />
+              </div>
+              <div class="col-span-2">
+                <label
+                  for="prodcutPrice"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Price</label
+                >
+                <input
+                  type="number"
+                  id="prodcutPrice"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="...MMK"
+                  required
+                />
+              </div>
+              <div class="col-span-2">
+                <button
+                  type="button"
+                  class="w-full h-full text-center px-3 py-2 text-sm text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg me-2 mb-2"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="inventory-items">
+          <div class="empty-stage last:block hidden">
+            <div class="flex flex-col justify-center items-center gap-2 p-4">
+              <img class="w-30" src="./img/empty.svg" alt="Empty-Items" />
+              <p class="">There is no item.</p>
+            </div>
+          </div>
+          <div
+            class="mb-2 flex justify-between border-2 border-blue-300 px-4 py-2 rounded-lg"
+          >
+            <h1>Apple</h1>
+            <p>300MMK</p>
+          </div>
+          <div
+            class="mb-2 flex justify-between border-2 border-blue-300 px-4 py-2 rounded-lg"
+          >
+            <h1>Apple</h1>
+            <p>300MMK</p>
+          </div>
+          <div
+            class="mb-2 flex justify-between border-2 border-blue-300 px-4 py-2 rounded-lg"
+          >
+            <h1>Apple</h1>
+            <p>300MMK</p>
+          </div>
+        </div>
+      </section>
+      <footer class="mt-auto">
+        <div class="container py-2">
+          <div class="flex justify-end gap-2">
+            <button
+              type="button"
+              id="manageInventoryBtn"
+              class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              Manage Inventory
+            </button>
+            <button
+              type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+            >
+              Print
+            </button>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
