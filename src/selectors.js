@@ -6,3 +6,4 @@ export const newProductPrice = document.querySelector("#newProductPrice");
 export const createProductBtn = document.querySelector("#createProductBtn");
 export const newProductTemplate = document.querySelector("#newProductTemplate");
 export const inventoryItems = document.querySelector("#inventoryItems");
+export const productSelect = document.querySelector("#productSelect");
