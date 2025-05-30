@@ -15,19 +15,36 @@ export const createProductHandler = () => {
     const productId = `product${uuidv4()}`;
     const name = newProductName.value;
     const price = newProductPrice.valueAsNumber;
-    inventoryItems.append(createProduct(productId, name, price));
+    // create product ui
+    inventoryItems.append(createProductCard(productId, name, price));
 
+    // push to select
     productSelect.append(new Option(name, productId));
+
+    // push to product states
+    products.push({
+        id: productId,
+        name: name,
+        price: price
+    });
     newProductName.value = null;
     newProductPrice.value = null;
+
   }
 };
 
-export const createProduct = (id, name, price) => {
+export const createProductCard = (id, name, price) => {
   const newProduct = newProductTemplate.content.cloneNode(true);
-  newProduct.querySelector(".product").id = id;
+  newProduct.querySelector(".product-card").id = id;
   newProduct.querySelector(".product-name").innerText = name;
   newProduct.querySelector(".product-price").innerText = price;
 
   return newProduct;
 };
+
+export const productRender = (products) => {
+    products.forEach(({id, name, price}) => {
+        inventoryItems.append(createProductCard(id, name, price));
+        productSelect.append(new Option(name, id));
+    });
+}
