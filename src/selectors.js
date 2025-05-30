@@ -7,3 +7,7 @@ export const createProductBtn = document.querySelector("#createProductBtn");
 export const newProductTemplate = document.querySelector("#newProductTemplate");
 export const inventoryItems = document.querySelector("#inventoryItems");
 export const productSelect = document.querySelector("#productSelect");
+export const recordForm = document.querySelector("#recordForm");
+export const addRecordBtn = document.querySelector("#addRecordBtn");
+export const newRecordTemplate = document.querySelector("#newRecordTemplate");
+export const recordTable = document.querySelector("#recordTable");

@@ -6,6 +6,7 @@ import {
   productSelect,
 } from "./selectors";
 import { v4 as uuidv4 } from "uuid";
+import { products } from "./states";
 
 export const createProductHandler = () => {
   if (
@@ -19,7 +20,7 @@ export const createProductHandler = () => {
     inventoryItems.append(createProductCard(productId, name, price));
 
     // push to select
-    productSelect.append(new Option(name, productId));
+    productSelect.append(new Option(name + " - " + price + "mmk", productId));
 
     // push to product states
     products.push({
@@ -43,8 +44,9 @@ export const createProductCard = (id, name, price) => {
 };
 
 export const productRender = (products) => {
+  //  initial Render
     products.forEach(({id, name, price}) => {
         inventoryItems.append(createProductCard(id, name, price));
-        productSelect.append(new Option(name, id));
+        productSelect.append(new Option(name + " - " + price + "mmk", id));
     });
 }
