@@ -11,3 +11,6 @@ export const recordForm = document.querySelector("#recordForm");
 export const addRecordBtn = document.querySelector("#addRecordBtn");
 export const newRecordTemplate = document.querySelector("#newRecordTemplate");
 export const recordTable = document.querySelector("#recordTable");
+export const recordTotal = document.querySelector("#recordTotal");
+export const recordTax = document.querySelector("#recordTax");
+export const recordNet = document.querySelector("#recordNet");

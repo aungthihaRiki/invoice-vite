@@ -1,4 +1,4 @@
-import { newRecordTemplate, recordForm, recordTable } from "./selectors";
+import { newRecordTemplate, recordForm, recordNet, recordTable, recordTax, recordTotal } from "./selectors";
 import { products } from "./states";
 
 export const addRecordFormHandler = (event) => {
@@ -15,8 +15,15 @@ export const addRecordFormHandler = (event) => {
     // add to record table UI
     recordTable.append(addRecordRow(currentProduct, productQuantityForm))
 
+    const total = calculateCostTotal();
+    const tax = calculateTax(total);
+    const netAmount = total + tax;
+
+    recordTotal.innerText = `${total} mmk`;
+    recordTax.innerText = `${tax} mmk`;
+    recordNet.innerText = `${netAmount} mmk`;
     // clear form input
-    formData.reset();
+    recordForm.reset();
 }
 
 export const addRecordRow = ({id, name , price}, quantity) => {
@@ -35,4 +42,15 @@ export const addRecordRow = ({id, name , price}, quantity) => {
     productCost.innerText = price * quantity;
 
     return record;
+}
+
+const calculateTax = (total, percentage = 5) => (total/100)*percentage;
+
+const calculateCostTotal = () => {
+    let total = 0;
+    recordTable.querySelectorAll(".record-cost")
+    .forEach(e => {
+        total += parseFloat(e.innerText);
+    });
+    return total;
 }
